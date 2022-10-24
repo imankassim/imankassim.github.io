@@ -69,6 +69,7 @@
         font-weight: bold;
         opacity: .8;
         color: $body-color;
+        background-image: linear-gradient(to top, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../imgs/header.jpg);
     }
 
     // header mini
@@ -82,5 +83,6 @@
         text-align: center;
         padding: 1rem;
         background: lighten($primary, 20%);
+        background-image: linear-gradient(to top, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../imgs/header.jpg);
     }
 }
