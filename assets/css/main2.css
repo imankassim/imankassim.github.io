@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:  border-box;
+    scroll-behavior: smooth;
+}
+
+
+
+nav{
+    position:fixed;
+    left: 0;
+    top: 0;
+    height: 75px;
+    width: 100%;
+    background: #FFFFFF;
+
+}
+
+nav .navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 90%;
+    background: #FFFFFF;
+    margin: auto;
+
+}
+
+nav .navbar .menu{
+    display: flex;
+
+}
+
+nav .navbar .logo a{
+    display: flex;
+    color: #000000;
+    font-size: 64px;
+    font-weight: bold;
+    font-family: 'SF Pro Display', sans-serif;
+    text-decoration: none;
+
+}
+
+.navbar .menu li{
+    list-style: none;
+    margin: 0 15px;
+
+}
+
+.navbar .menu li a{
+    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'SF Pro Display', sans-serif;
+    text-decoration: none;
+
+}
+
+section{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+#home{
+    background: #FFFFFF;
+}
+#expertise{
+    background: #292621;
+}
+#projects{
+    background: #FFFFFF;
+}
+#languages{
+    background: #292621;
+}
+#highlights{
+    background: #FFFFFF;
+}
+#cv{
+    background: #292621;
+}
+#contact{
+    background: #292621;
+}
+
+
+.main-rectangle{
+    border-radius: 140px 0px;
+    background: #DAf66E;
+    padding: 20px; 
+    width: 884px;
+    height: 366px; 
+}
+
+.projects-button{
+    border-radius: 40px;
+    height: 58px;
+    width: 173px;
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 340px;
+    left: 590px;
+    
+}
