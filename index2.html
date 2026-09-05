@@ -176,9 +176,9 @@
   /* ---------- EXPERTISE ---------- */
   .expertise{ background:var(--dark); }
   .expertise-grid{
-    display:flex;
-    flex-wrap:wrap;
-    margin:-13px;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:clamp(14px, 1.8vw, 26px);
   }
   .exp-card{
     background:var(--paper);
@@ -187,8 +187,7 @@
     min-height:300px;
     display:flex;
     flex-direction:column;
-    margin:13px;
-    flex:1 1 calc(25% - 26px);
+    min-width:0;
   }
   .exp-card > *{ margin-top:18px; }
   .exp-card > *:first-child{ margin-top:0; }
@@ -345,7 +344,7 @@
 
   /* ---------- RESPONSIVE ---------- */
   @media (max-width: 980px){
-    .exp-card{ flex-basis:calc(50% - 26px); }
+    .expertise-grid{ grid-template-columns:repeat(2, 1fr); }
     .proj-card{ flex-basis:calc(50% - 28px); }
     .hl-card{ flex-basis:calc(50% - 26px); }
     .footer-illustration{ display:none; }
@@ -370,7 +369,7 @@
     }
     .hero-text{ padding: 24px 28px 40px; padding: 24px clamp(20px,6vw,40px) 40px; align-items:flex-start; }
     section.block{ padding:64px 0; }
-    .exp-card{ flex-basis:100%; }
+    .expertise-grid{ grid-template-columns:1fr; }
     .proj-card{ flex-basis:100%; }
     .hl-card{ flex-basis:100%; }
     .languages{ border-radius:0 90px 0 90px; }
