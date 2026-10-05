@@ -91,7 +91,7 @@
   }
   .nav-toggle{ display:none; }
 
-  #expertise, #projects, #highlights, #contact{ scroll-margin-top: 100px; }
+  #expertise, #career, #projects, #highlights, #contact{ scroll-margin-top: 100px; }
 
   /* ---------- HERO ---------- */
   main{ padding-top: 112px; }
@@ -265,8 +265,45 @@
     color:#28261f;
   }
 
+  /* ---------- CAREER ---------- */
+  .career{ background:var(--paper); }
+  .timeline{ position:relative; max-width:1040px; margin:0 auto; --gut:15%; }
+  .road{ position:absolute; inset:0; z-index:2; width:100%; height:100%; overflow:visible; pointer-events:none; }
+  .road .tarmac{ fill:none; stroke:var(--dark); stroke-width:16; stroke-linecap:round; }
+  .road .lines{ fill:none; stroke:var(--lime); stroke-width:2.5; stroke-dasharray:10 11; stroke-linecap:round; }
+  .road .stop{ stroke:var(--dark); stroke-width:4; }
+  .road-end{
+    position:absolute; left:50%; transform:translate(-50%,-50%);
+    background:var(--dark); color:var(--paper); font-size:13px; font-weight:600;
+    padding:7px 16px; border-radius:999px; white-space:nowrap; z-index:3;
+  }
+  .road-end.start{ top:0; }
+  .road-end.finish{ top:100%; }
+  .tl-list{ position:relative; padding:56px 0; }
+  .tl-item{ position:relative; width:calc(50% - var(--gut)/2); margin-bottom:40px; }
+  .tl-item:last-child{ margin-bottom:0; }
+  .tl-item:nth-child(even){ margin-left:calc(50% + var(--gut)/2); }
+  .tl-card{
+    background:var(--c); border-radius:70px 0 70px 0;
+    padding:32px 32px 36px; display:flex; flex-direction:column; gap:12px; color:#141210;
+  }
+  .tl-item:nth-child(even) .tl-card{ border-radius:0 70px 0 70px; }
+  .tl-date{
+    width:fit-content; background:var(--paper); padding:7px 16px;
+    border-radius:999px; font-size:13px; font-weight:600;
+  }
+  .tl-card h3{ font-size:21px; font-weight:600; line-height:1.25; }
+  .tl-org{ font-size:15px; font-weight:600; margin-top:-6px; }
+  .tl-org span{ font-weight:400; }
+  .tl-card p{ font-size:15px; line-height:1.5; }
+  .tl-item.c-purple{ --c:var(--purple); }
+  .tl-item.c-pink{ --c:var(--pink); }
+  .tl-item.c-lime{ --c:var(--lime); }
+  .tl-item.c-orange{ --c:var(--orange); }
+  .skills-sub{ margin-top:80px; }
+
   /* ---------- PROJECTS ---------- */
-  .projects{ background:var(--paper); }
+  .projects{ background:var(--dark); }
   .projects-grid{
     display:flex;
     flex-wrap:wrap;
@@ -432,6 +469,10 @@
     .expertise-grid{ grid-template-columns:1fr; }
     .proj-card{ flex-basis:100%; }
     .hl-card{ flex-basis:100%; }
+    .tl-item, .tl-item:nth-child(even){ width:auto; margin-left:58px; }
+    .tl-card, .tl-item:nth-child(even) .tl-card{ border-radius:50px 0 50px 0; padding:28px 24px 30px; }
+    .road-end{ left:29px; font-size:12px; padding:6px 12px; transform:translate(-22px,-50%); }
+    .skills-sub{ margin-top:56px; }
     .footer{ border-radius:0 90px 0 0; }
     .footer-card{ flex-direction:column; border-radius:0 60px 0 40px; }
     .footer-col.say-hello{ border-left:none; border-top:1.5px solid #d8d5cc; }
@@ -445,6 +486,7 @@
     <a href="#" class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">ik.</a>
     <nav class="nav-links">
       <a href="#expertise">expertise</a>
+      <a href="#career">career</a>
       <a href="#projects">projects</a>
       <a href="#highlights">highlights</a>
       <a href="#contact">contact</a>
@@ -522,10 +564,74 @@
         </div>
 
       </div>
+      <h2 class="section-head skills-sub">my skills</h2>
+      <div class="skill-pills">
+        <span class="skill-pill c-lime">Python</span>
+        <span class="skill-pill c-pink">SQL</span>
+        <span class="skill-pill c-purple">VBA</span>
+        <span class="skill-pill c-orange">Excel</span>
+        <span class="skill-pill c-lime">Power BI</span>
+        <span class="skill-pill c-pink">Terraform</span>
+        <span class="skill-pill c-purple">Agile</span>
+        <span class="skill-pill c-orange">PRINCE2</span>
+      </div>
     </div>
   </section>
 
-  <section class="projects block" id="projects">
+  <section class="career block" id="career">
+    <div class="wrap">
+      <h2 class="section-head">my career</h2>
+      <div class="timeline">
+        <svg class="road" aria-hidden="true"></svg>
+        <span class="road-end start">today</span>
+        <div class="tl-list">
+        <div class="tl-item c-purple">
+          <div class="tl-card">
+            <span class="tl-date">Aug 2025 – present</span>
+            <h3>Performance & Insight Professional</h3>
+            <p class="tl-org">Openreach <span>· Wales & Midlands</span></p>
+            <p>Building data pipelines and machine learning models to report on performance and insight across Wales and the Midlands</p>
+          </div>
+        </div>
+        <div class="tl-item c-pink">
+          <div class="tl-card">
+            <span class="tl-date">Oct 2025 – present</span>
+            <h3>L7 AI & Data Specialist Masters</h3>
+            <p class="tl-org">QA Ltd <span>· Apprenticeship</span></p>
+            <p>Studying towards a Level 7 Masters in AI and data, covering data science, machine learning and data architecture</p>
+          </div>
+        </div>
+        <div class="tl-item c-lime">
+          <div class="tl-card">
+            <span class="tl-date">Sep 2023 – Aug 2025</span>
+            <h3>Technology Consultant (Data & AI Operations)</h3>
+            <p class="tl-org">Openreach <span>· Birmingham, hybrid</span></p>
+            <p>Data analysis and data science using SQL and Google Cloud Platform, turning results into clear stories for the business</p>
+          </div>
+        </div>
+        <div class="tl-item c-orange">
+          <div class="tl-card">
+            <span class="tl-date">Apr 2022 – Aug 2023</span>
+            <h3>Technology Consultant</h3>
+            <p class="tl-org">QA Ltd <span>· Birmingham</span></p>
+            <p>Analysis and QA testing using Python, working with multiple companies on security-based projects</p>
+          </div>
+        </div>
+        <div class="tl-item c-purple">
+          <div class="tl-card">
+            <span class="tl-date">Aug 2018 – Nov 2021</span>
+            <h3>Software Developer IT Apprentice</h3>
+            <p class="tl-org">BMW Group <span>· Oxford</span></p>
+            <p>Worked mainly in the SmartOPS department on machine data and analysis through Splunk, and delivered technical solutions across the business with teams such as Logistics and Apprenticeships</p>
+          </div>
+        </div>
+        </div>
+        <span class="road-end finish">2018</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects dark block" id="projects">
     <div class="wrap">
       <h2 class="section-head">my projects</h2>
       <div class="projects-grid">
@@ -602,21 +708,6 @@
     </div>
   </section>
 
-  <section class="skills dark block">
-    <div class="wrap">
-      <h2 class="section-head">my skills</h2>
-      <div class="skill-pills">
-        <span class="skill-pill c-lime">Python</span>
-        <span class="skill-pill c-pink">SQL</span>
-        <span class="skill-pill c-purple">VBA</span>
-        <span class="skill-pill c-orange">Excel</span>
-        <span class="skill-pill c-lime">Power BI</span>
-        <span class="skill-pill c-pink">Terraform</span>
-        <span class="skill-pill c-purple">Agile</span>
-        <span class="skill-pill c-orange">PRINCE2</span>
-      </div>
-    </div>
-  </section>
 
   <section class="highlights block" id="highlights">
     <div class="wrap">
@@ -678,6 +769,40 @@
 </main>
 
 <script>
+
+(function(){
+  var tl=document.querySelector('.timeline'); if(!tl) return;
+  var svg=tl.querySelector('.road'), NS='http://www.w3.org/2000/svg';
+  function draw(){
+    var W=tl.clientWidth, H=tl.clientHeight, mobile=W<640;
+    var items=[].slice.call(tl.querySelectorAll('.tl-item'));
+    var cx=mobile?29:W/2, swing=mobile?14:Math.max(40,W*0.15/2-6);
+    var pts=items.map(function(it,i){
+      var left=(i%2===0);
+      return {x: mobile ? cx+(left?-swing:swing) : cx+(left?-swing:swing),
+              y: it.offsetTop+it.parentNode.offsetTop+46,
+              c: getComputedStyle(it).getPropertyValue('--c')};
+    });
+    var all=[{x:cx,y:0}].concat(pts,[{x:cx,y:H}]);
+    var d='M'+all[0].x+' '+all[0].y;
+    for(var i=1;i<all.length;i++){
+      var a=all[i-1], b=all[i], m=(b.y-a.y)/2;
+      d+=' C'+a.x+' '+(a.y+m)+' '+b.x+' '+(b.y-m)+' '+b.x+' '+b.y;
+    }
+    svg.setAttribute('viewBox','0 0 '+W+' '+H);
+    svg.innerHTML='';
+    ['tarmac','lines'].forEach(function(k){
+      var p=document.createElementNS(NS,'path'); p.setAttribute('d',d); p.setAttribute('class',k); svg.appendChild(p);
+    });
+    pts.forEach(function(pt){
+      var c=document.createElementNS(NS,'circle');
+      c.setAttribute('cx',pt.x); c.setAttribute('cy',pt.y); c.setAttribute('r',mobile?10:13);
+      c.setAttribute('class','stop'); c.setAttribute('fill',pt.c.trim()||'#fff'); svg.appendChild(c);
+    });
+  }
+  draw(); window.addEventListener('resize',draw);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(draw);
+})();
 (function(){
   var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
   var sections = [];
